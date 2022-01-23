@@ -1,0 +1,3772 @@
+{
+  "contractName": "FrenList",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "cancel",
+          "type": "bool"
+        }
+      ],
+      "name": "FrenCancel",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "notify",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "cancel",
+          "type": "bool"
+        }
+      ],
+      "name": "FrenCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "notify",
+          "type": "bool"
+        }
+      ],
+      "name": "FrenNotify",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "frenCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "frens",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "notify",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "cancel",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_content",
+          "type": "string"
+        }
+      ],
+      "name": "createFren",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "toggleNotify",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "toggleCancel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"cancel\",\"type\":\"bool\"}],\"name\":\"FrenCancel\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"notify\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"cancel\",\"type\":\"bool\"}],\"name\":\"FrenCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"notify\",\"type\":\"bool\"}],\"name\":\"FrenNotify\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_content\",\"type\":\"string\"}],\"name\":\"createFren\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"frenCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"frens\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"notify\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"cancel\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"toggleCancel\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"toggleNotify\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/dapps/follow-my-frens/follow-my-frens-react/FrenList/contracts/FrenList.sol\":\"FrenList\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/dapps/follow-my-frens/follow-my-frens-react/FrenList/contracts/FrenList.sol\":{\"keccak256\":\"0xb6ae5fd1869a5f98914dc12aafe08c059944a6757a9b730ceaab7ea647e28999\",\"urls\":[\"bzz-raw://fe222c47277ce141f1af51bb8374669117662362da885ff0460069dd93845387\",\"dweb:/ipfs/QmZJYKefsuTAFGtVwwqKPcnfChPuPK1b7xCQeqAnd9cuwK\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061003c6040518060600160405280602a8152602001610bfc602a913961004160201b60201c565b610260565b6000808154809291906001019190505550604051806080016040528060005481526020018281526020016000151581526020016000151581525060016000805481526020019081526020016000206000820151816000015560208201518160010190805190602001906100b59291906101bb565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f72268297703df572daae630b58d19f7956fdd96cf05105b2dfaf0eaa3e0d8e216000548260008060405180858152602001806020018415151515815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561017b578082015181840152602081019050610160565b50505050905090810190601f1680156101a85780820380516001836020036101000a031916815260200191505b509550505050505060405180910390a150565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101fc57805160ff191683800117855561022a565b8280016001018555821561022a579182015b8281111561022957825182559160200191906001019061020e565b5b509050610237919061023b565b5090565b61025d91905b80821115610259576000816000905550600101610241565b5090565b90565b61098d8061026f6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063776238591461005c5780639f11bb7c14610117578063b24767b714610145578063b750d64e14610209578063c569026e14610237575b600080fd5b6101156004803603602081101561007257600080fd5b810190808035906020019064010000000081111561008f57600080fd5b8201836020820111156100a157600080fd5b803590602001918460018302840111640100000000831117156100c357600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610255565b005b6101436004803603602081101561012d57600080fd5b81019080803590602001909291905050506103cf565b005b6101716004803603602081101561015b57600080fd5b81019080803590602001909291905050506105b7565b60405180858152602001806020018415151515815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b838110156101cb5780820151818401526020810190506101b0565b50505050905090810190601f1680156101f85780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6102356004803603602081101561021f57600080fd5b8101908080359060200190929190505050610699565b005b61023f610881565b6040518082815260200191505060405180910390f35b6000808154809291906001019190505550604051806080016040528060005481526020018281526020016000151581526020016000151581525060016000805481526020019081526020016000206000820151816000015560208201518160010190805190602001906102c9929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f72268297703df572daae630b58d19f7956fdd96cf05105b2dfaf0eaa3e0d8e216000548260008060405180858152602001806020018415151515815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561038f578082015181840152602081019050610374565b50505050905090810190601f1680156103bc5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390a150565b6103d7610907565b6001600083815260200190815260200160002060405180608001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104985780601f1061046d57610100808354040283529160200191610498565b820191906000526020600020905b81548152906001019060200180831161047b57829003601f168201915b505050505081526020016002820160009054906101000a900460ff161515151581526020016002820160019054906101000a900460ff16151515158152505090508060600151158160600190151590811515815250508060016000848152602001908152602001600020600082015181600001556020820151816001019080519060200190610528929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507fc22bb222de207913a1d5e28c2ab60e10a7cdad86b3796b1d83bddae529dbdc5982826060015160405180838152602001821515151581526020019250505060405180910390a15050565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106695780601f1061063e57610100808354040283529160200191610669565b820191906000526020600020905b81548152906001019060200180831161064c57829003601f168201915b5050505050908060020160009054906101000a900460ff16908060020160019054906101000a900460ff16905084565b6106a1610907565b6001600083815260200190815260200160002060405180608001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107625780601f1061073757610100808354040283529160200191610762565b820191906000526020600020905b81548152906001019060200180831161074557829003601f168201915b505050505081526020016002820160009054906101000a900460ff161515151581526020016002820160019054906101000a900460ff161515151581525050905080604001511581604001901515908115158152505080600160008481526020019081526020016000206000820151816000015560208201518160010190805190602001906107f2929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507ffd38e78516e1de249df28ca27b043f23009a27b35b12ac3df38ca69931deb5d482826040015160405180838152602001821515151581526020019250505060405180910390a15050565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108c857805160ff19168380011785556108f6565b828001600101855582156108f6579182015b828111156108f55782518255916020019190600101906108da565b5b5090506109039190610933565b5090565b604051806080016040528060008152602001606081526020016000151581526020016000151581525090565b61095591905b80821115610951576000816000905550600101610939565b5090565b9056fea265627a7a7231582050673fb79ffc603fbc151d473343ac9f7574f0e672802cd3f656eff514b982ad64736f6c63430005100032307830303030303030303030303030303030303030303030303030303030303030303030303064456144",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063776238591461005c5780639f11bb7c14610117578063b24767b714610145578063b750d64e14610209578063c569026e14610237575b600080fd5b6101156004803603602081101561007257600080fd5b810190808035906020019064010000000081111561008f57600080fd5b8201836020820111156100a157600080fd5b803590602001918460018302840111640100000000831117156100c357600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610255565b005b6101436004803603602081101561012d57600080fd5b81019080803590602001909291905050506103cf565b005b6101716004803603602081101561015b57600080fd5b81019080803590602001909291905050506105b7565b60405180858152602001806020018415151515815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b838110156101cb5780820151818401526020810190506101b0565b50505050905090810190601f1680156101f85780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6102356004803603602081101561021f57600080fd5b8101908080359060200190929190505050610699565b005b61023f610881565b6040518082815260200191505060405180910390f35b6000808154809291906001019190505550604051806080016040528060005481526020018281526020016000151581526020016000151581525060016000805481526020019081526020016000206000820151816000015560208201518160010190805190602001906102c9929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f72268297703df572daae630b58d19f7956fdd96cf05105b2dfaf0eaa3e0d8e216000548260008060405180858152602001806020018415151515815260200183151515158152602001828103825285818151815260200191508051906020019080838360005b8381101561038f578082015181840152602081019050610374565b50505050905090810190601f1680156103bc5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390a150565b6103d7610907565b6001600083815260200190815260200160002060405180608001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104985780601f1061046d57610100808354040283529160200191610498565b820191906000526020600020905b81548152906001019060200180831161047b57829003601f168201915b505050505081526020016002820160009054906101000a900460ff161515151581526020016002820160019054906101000a900460ff16151515158152505090508060600151158160600190151590811515815250508060016000848152602001908152602001600020600082015181600001556020820151816001019080519060200190610528929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507fc22bb222de207913a1d5e28c2ab60e10a7cdad86b3796b1d83bddae529dbdc5982826060015160405180838152602001821515151581526020019250505060405180910390a15050565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106695780601f1061063e57610100808354040283529160200191610669565b820191906000526020600020905b81548152906001019060200180831161064c57829003601f168201915b5050505050908060020160009054906101000a900460ff16908060020160019054906101000a900460ff16905084565b6106a1610907565b6001600083815260200190815260200160002060405180608001604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107625780601f1061073757610100808354040283529160200191610762565b820191906000526020600020905b81548152906001019060200180831161074557829003601f168201915b505050505081526020016002820160009054906101000a900460ff161515151581526020016002820160019054906101000a900460ff161515151581525050905080604001511581604001901515908115158152505080600160008481526020019081526020016000206000820151816000015560208201518160010190805190602001906107f2929190610887565b5060408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507ffd38e78516e1de249df28ca27b043f23009a27b35b12ac3df38ca69931deb5d482826040015160405180838152602001821515151581526020019250505060405180910390a15050565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108c857805160ff19168380011785556108f6565b828001600101855582156108f6579182015b828111156108f55782518255916020019190600101906108da565b5b5090506109039190610933565b5090565b604051806080016040528060008152602001606081526020016000151581526020016000151581525090565b61095591905b80821115610951576000816000905550600101610939565b5090565b9056fea265627a7a7231582050673fb79ffc603fbc151d473343ac9f7574f0e672802cd3f656eff514b982ad64736f6c63430005100032",
+  "sourceMap": "57:1030:0:-;;;103:1;79:25;;433:88;8:9:-1;5:2;;;30:1;27;20:12;5:2;433:88:0;460:56;;;;;;;;;;;;;;;;;;:10;;;:56;;:::i;:::-;57:1030;;525:195;582:9;;:12;;;;;;;;;;;;;619:39;;;;;;;;624:9;;619:39;;;;635:8;619:39;;;;645:5;619:39;;;;;;652:5;619:39;;;;;600:5;:16;606:9;;600:16;;;;;;;;;;;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;669:46;681:9;;692:8;702:5;709;669:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;669:46:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:195;:::o;57:1030::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "57:1030:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:1030:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:195;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;525:195:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;525:195:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;525:195:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;525:195:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;525:195:0;;;;;;;;;;;;;;;:::i;:::-;;906:178;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;906:178:0;;;;;;;;;;;;;;;;;:::i;:::-;;194:34;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;194:34:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;194:34:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;724:178;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;724:178:0;;;;;;;;;;;;;;;;;:::i;:::-;;79:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;525:195;582:9;;:12;;;;;;;;;;;;;619:39;;;;;;;;624:9;;619:39;;;;635:8;619:39;;;;645:5;619:39;;;;;;652:5;619:39;;;;;600:5;:16;606:9;;600:16;;;;;;;;;;;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;669:46;681:9;;692:8;702:5;709;669:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;669:46:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:195;:::o;906:178::-;951:17;;:::i;:::-;971:5;:10;977:3;971:10;;;;;;;;;;;951:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1003:5;:12;;;1002:13;987:5;:12;;:28;;;;;;;;;;;1034:5;1021;:10;1027:3;1021:10;;;;;;;;;;;:18;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1050:29;1061:3;1066:5;:12;;;1050:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;906:178;;:::o;194:34::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;724:178::-;769:17;;:::i;:::-;789:5;:10;795:3;789:10;;;;;;;;;;;769:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;821:5;:12;;;820:13;805:5;:12;;:28;;;;;;;;;;;852:5;839;:10;845:3;839:10;;;;;;;;;;;:18;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;868:29;879:3;884:5;:12;;;868:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;724:178;;:::o;79:25::-;;;;:::o;57:1030::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.5.0;\n\ncontract FrenList {\n  uint public frenCount = 0;\n\n  struct Fren {\n    uint id;\n    string content;\n    bool notify;\n\tbool cancel;\n  }\n\n  mapping(uint => Fren) public frens;\n\n  event FrenCreated(\n    uint id,\n    string content,\n    bool notify,\n\tbool cancel\n  );\n\n  event FrenNotify(\n    uint id,\n    bool notify\n  );\n\n  event FrenCancel(\n    uint id,\n    bool cancel\n  );\n\n  constructor() public {\n    createFren(\"0x000000000000000000000000000000000000dEaD\");\n  }\n\n  function createFren(string memory _content) public {\n    frenCount ++;\n    frens[frenCount] = Fren(frenCount, _content, false, false);\n    emit FrenCreated(frenCount, _content, false, false);\n  }\n\n  function toggleNotify(uint _id) public {\n    Fren memory _fren = frens[_id];\n    _fren.notify = !_fren.notify;\n    frens[_id] = _fren;\n    emit FrenNotify(_id, _fren.notify);\n  }\n\n  function toggleCancel(uint _id) public {\n    Fren memory _fren = frens[_id];\n    _fren.cancel = !_fren.cancel;\n    frens[_id] = _fren;\n    emit FrenCancel(_id, _fren.cancel);\n  }\n\n}\n",
+  "sourcePath": "C:/dapps/follow-my-frens/follow-my-frens-react/FrenList/contracts/FrenList.sol",
+  "ast": {
+    "absolutePath": "/C/dapps/follow-my-frens/follow-my-frens-react/FrenList/contracts/FrenList.sol",
+    "exportedSymbols": {
+      "FrenList": [
+        139
+      ]
+    },
+    "id": 140,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 139,
+        "linearizedBaseContracts": [
+          139
+        ],
+        "name": "FrenList",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "frenCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 139,
+            "src": "79:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "79:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "103:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "FrenList.Fren",
+            "id": 13,
+            "members": [
+              {
+                "constant": false,
+                "id": 6,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "127:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "127:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "140:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "140:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "notify",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "160:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "cancel",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "174:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "174:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Fren",
+            "nodeType": "StructDefinition",
+            "scope": 139,
+            "src": "109:81:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17,
+            "name": "frens",
+            "nodeType": "VariableDeclaration",
+            "scope": 139,
+            "src": "194:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+              "typeString": "mapping(uint256 => struct FrenList.Fren)"
+            },
+            "typeName": {
+              "id": 16,
+              "keyType": {
+                "id": 14,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "202:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "194:21:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                "typeString": "mapping(uint256 => struct FrenList.Fren)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 15,
+                "name": "Fren",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 13,
+                "src": "210:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                  "typeString": "struct FrenList.Fren"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 27,
+            "name": "FrenCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "256:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "256:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "269:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "269:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "notify",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "289:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "289:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "cancel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "303:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "250:68:0"
+            },
+            "src": "233:86:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 33,
+            "name": "FrenNotify",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "345:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 31,
+                  "indexed": false,
+                  "name": "notify",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "358:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "358:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "339:34:0"
+            },
+            "src": "323:51:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 39,
+            "name": "FrenCancel",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "400:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 37,
+                  "indexed": false,
+                  "name": "cancel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "413:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "413:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "394:34:0"
+            },
+            "src": "378:51:0"
+          },
+          {
+            "body": {
+              "id": 46,
+              "nodeType": "Block",
+              "src": "454:67:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303064456144",
+                        "id": 43,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "471:44:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2737ae3b2bd6d6c72cf8b2980d313b701bc30259538be7ee03f14837058cb838",
+                          "typeString": "literal_string \"0x000000000000000000000000000000000000dEaD\""
+                        },
+                        "value": "0x000000000000000000000000000000000000dEaD"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_2737ae3b2bd6d6c72cf8b2980d313b701bc30259538be7ee03f14837058cb838",
+                          "typeString": "literal_string \"0x000000000000000000000000000000000000dEaD\""
+                        }
+                      ],
+                      "id": 42,
+                      "name": "createFren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "460:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 44,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "460:56:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 45,
+                  "nodeType": "ExpressionStatement",
+                  "src": "460:56:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 47,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "444:2:0"
+            },
+            "returnParameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "454:0:0"
+            },
+            "scope": 139,
+            "src": "433:88:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "576:144:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 53,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "582:12:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 52,
+                      "name": "frenCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "582:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 54,
+                  "nodeType": "ExpressionStatement",
+                  "src": "582:12:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "600:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 57,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 56,
+                        "name": "frenCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "606:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "600:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 59,
+                          "name": "frenCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4,
+                          "src": "624:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 60,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 49,
+                          "src": "635:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "645:5:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 62,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "652:5:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 58,
+                        "name": "Fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "619:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Fren_$13_storage_ptr_$",
+                          "typeString": "type(struct FrenList.Fren storage pointer)"
+                        }
+                      },
+                      "id": 63,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "619:39:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "600:58:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 65,
+                  "nodeType": "ExpressionStatement",
+                  "src": "600:58:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 67,
+                        "name": "frenCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "681:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 68,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 49,
+                        "src": "692:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "702:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "709:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 66,
+                      "name": "FrenCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27,
+                      "src": "669:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool,bool)"
+                      }
+                    },
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "669:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "EmitStatement",
+                  "src": "664:51:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createFren",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 49,
+                  "name": "_content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "545:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "545:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "544:24:0"
+            },
+            "returnParameters": {
+              "id": 51,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "576:0:0"
+            },
+            "scope": 139,
+            "src": "525:195:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 105,
+              "nodeType": "Block",
+              "src": "763:139:0",
+              "statements": [
+                {
+                  "assignments": [
+                    80
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 80,
+                      "name": "_fren",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 105,
+                      "src": "769:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 79,
+                        "name": "Fren",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13,
+                        "src": "769:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                          "typeString": "struct FrenList.Fren"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 84,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 81,
+                      "name": "frens",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "789:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                        "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                      }
+                    },
+                    "id": 83,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 82,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 76,
+                      "src": "795:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "789:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "769:30:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 85,
+                        "name": "_fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 80,
+                        "src": "805:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                          "typeString": "struct FrenList.Fren memory"
+                        }
+                      },
+                      "id": 87,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "notify",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "805:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 90,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "820:13:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "821:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 89,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "notify",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "821:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "805:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "805:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 97,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "839:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 95,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 94,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "845:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "839:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 96,
+                      "name": "_fren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "852:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "839:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 98,
+                  "nodeType": "ExpressionStatement",
+                  "src": "839:18:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 100,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "879:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "884:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 102,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "notify",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "884:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 99,
+                      "name": "FrenNotify",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 33,
+                      "src": "868:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "868:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 104,
+                  "nodeType": "EmitStatement",
+                  "src": "863:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 106,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleNotify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 106,
+                  "src": "746:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:10:0"
+            },
+            "returnParameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "763:0:0"
+            },
+            "scope": 139,
+            "src": "724:178:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 137,
+              "nodeType": "Block",
+              "src": "945:139:0",
+              "statements": [
+                {
+                  "assignments": [
+                    112
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 112,
+                      "name": "_fren",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 137,
+                      "src": "951:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 111,
+                        "name": "Fren",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13,
+                        "src": "951:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                          "typeString": "struct FrenList.Fren"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 116,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 113,
+                      "name": "frens",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "971:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                        "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                      }
+                    },
+                    "id": 115,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 114,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 108,
+                      "src": "977:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "971:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "951:30:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 123,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 117,
+                        "name": "_fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "987:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                          "typeString": "struct FrenList.Fren memory"
+                        }
+                      },
+                      "id": 119,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "cancel",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12,
+                      "src": "987:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 122,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "1002:13:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 120,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 112,
+                          "src": "1003:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 121,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1003:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "987:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 124,
+                  "nodeType": "ExpressionStatement",
+                  "src": "987:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 129,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 125,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "1021:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 127,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1027:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1021:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 128,
+                      "name": "_fren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 112,
+                      "src": "1034:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "1021:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 130,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1021:18:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 132,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1061:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 133,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 112,
+                          "src": "1066:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 134,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1066:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 131,
+                      "name": "FrenCancel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 39,
+                      "src": "1050:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 136,
+                  "nodeType": "EmitStatement",
+                  "src": "1045:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 138,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleCancel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 108,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 138,
+                  "src": "928:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 107,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "928:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "927:10:0"
+            },
+            "returnParameters": {
+              "id": 110,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "945:0:0"
+            },
+            "scope": 139,
+            "src": "906:178:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 140,
+        "src": "57:1030:0"
+      }
+    ],
+    "src": "32:1056:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/dapps/follow-my-frens/follow-my-frens-react/FrenList/contracts/FrenList.sol",
+    "exportedSymbols": {
+      "FrenList": [
+        139
+      ]
+    },
+    "id": 140,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 139,
+        "linearizedBaseContracts": [
+          139
+        ],
+        "name": "FrenList",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "frenCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 139,
+            "src": "79:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "79:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "103:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "FrenList.Fren",
+            "id": 13,
+            "members": [
+              {
+                "constant": false,
+                "id": 6,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "127:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "127:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "140:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "140:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "notify",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "160:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "cancel",
+                "nodeType": "VariableDeclaration",
+                "scope": 13,
+                "src": "174:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "174:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Fren",
+            "nodeType": "StructDefinition",
+            "scope": 139,
+            "src": "109:81:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17,
+            "name": "frens",
+            "nodeType": "VariableDeclaration",
+            "scope": 139,
+            "src": "194:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+              "typeString": "mapping(uint256 => struct FrenList.Fren)"
+            },
+            "typeName": {
+              "id": 16,
+              "keyType": {
+                "id": 14,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "202:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "194:21:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                "typeString": "mapping(uint256 => struct FrenList.Fren)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 15,
+                "name": "Fren",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 13,
+                "src": "210:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                  "typeString": "struct FrenList.Fren"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 27,
+            "name": "FrenCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "256:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "256:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "269:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "269:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23,
+                  "indexed": false,
+                  "name": "notify",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "289:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "289:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "cancel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 27,
+                  "src": "303:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "250:68:0"
+            },
+            "src": "233:86:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 33,
+            "name": "FrenNotify",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "345:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 31,
+                  "indexed": false,
+                  "name": "notify",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "358:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "358:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "339:34:0"
+            },
+            "src": "323:51:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 39,
+            "name": "FrenCancel",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "400:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 37,
+                  "indexed": false,
+                  "name": "cancel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "413:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "413:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "394:34:0"
+            },
+            "src": "378:51:0"
+          },
+          {
+            "body": {
+              "id": 46,
+              "nodeType": "Block",
+              "src": "454:67:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303064456144",
+                        "id": 43,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "471:44:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2737ae3b2bd6d6c72cf8b2980d313b701bc30259538be7ee03f14837058cb838",
+                          "typeString": "literal_string \"0x000000000000000000000000000000000000dEaD\""
+                        },
+                        "value": "0x000000000000000000000000000000000000dEaD"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_2737ae3b2bd6d6c72cf8b2980d313b701bc30259538be7ee03f14837058cb838",
+                          "typeString": "literal_string \"0x000000000000000000000000000000000000dEaD\""
+                        }
+                      ],
+                      "id": 42,
+                      "name": "createFren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "460:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 44,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "460:56:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 45,
+                  "nodeType": "ExpressionStatement",
+                  "src": "460:56:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 47,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "444:2:0"
+            },
+            "returnParameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "454:0:0"
+            },
+            "scope": 139,
+            "src": "433:88:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "576:144:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 53,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "582:12:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 52,
+                      "name": "frenCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "582:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 54,
+                  "nodeType": "ExpressionStatement",
+                  "src": "582:12:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "600:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 57,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 56,
+                        "name": "frenCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "606:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "600:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 59,
+                          "name": "frenCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4,
+                          "src": "624:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 60,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 49,
+                          "src": "635:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "645:5:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 62,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "652:5:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 58,
+                        "name": "Fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "619:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Fren_$13_storage_ptr_$",
+                          "typeString": "type(struct FrenList.Fren storage pointer)"
+                        }
+                      },
+                      "id": 63,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "619:39:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "600:58:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 65,
+                  "nodeType": "ExpressionStatement",
+                  "src": "600:58:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 67,
+                        "name": "frenCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "681:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 68,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 49,
+                        "src": "692:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "702:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "709:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 66,
+                      "name": "FrenCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 27,
+                      "src": "669:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool,bool)"
+                      }
+                    },
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "669:46:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "EmitStatement",
+                  "src": "664:51:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createFren",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 49,
+                  "name": "_content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "545:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "545:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "544:24:0"
+            },
+            "returnParameters": {
+              "id": 51,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "576:0:0"
+            },
+            "scope": 139,
+            "src": "525:195:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 105,
+              "nodeType": "Block",
+              "src": "763:139:0",
+              "statements": [
+                {
+                  "assignments": [
+                    80
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 80,
+                      "name": "_fren",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 105,
+                      "src": "769:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 79,
+                        "name": "Fren",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13,
+                        "src": "769:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                          "typeString": "struct FrenList.Fren"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 84,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 81,
+                      "name": "frens",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "789:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                        "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                      }
+                    },
+                    "id": 83,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 82,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 76,
+                      "src": "795:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "789:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "769:30:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 85,
+                        "name": "_fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 80,
+                        "src": "805:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                          "typeString": "struct FrenList.Fren memory"
+                        }
+                      },
+                      "id": 87,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "notify",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "805:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 90,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "820:13:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "821:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 89,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "notify",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "821:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "805:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "805:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 97,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "839:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 95,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 94,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "845:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "839:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 96,
+                      "name": "_fren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "852:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "839:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 98,
+                  "nodeType": "ExpressionStatement",
+                  "src": "839:18:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 100,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "879:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "884:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 102,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "notify",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "884:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 99,
+                      "name": "FrenNotify",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 33,
+                      "src": "868:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "868:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 104,
+                  "nodeType": "EmitStatement",
+                  "src": "863:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 106,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleNotify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 106,
+                  "src": "746:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:10:0"
+            },
+            "returnParameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "763:0:0"
+            },
+            "scope": 139,
+            "src": "724:178:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 137,
+              "nodeType": "Block",
+              "src": "945:139:0",
+              "statements": [
+                {
+                  "assignments": [
+                    112
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 112,
+                      "name": "_fren",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 137,
+                      "src": "951:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 111,
+                        "name": "Fren",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13,
+                        "src": "951:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_storage_ptr",
+                          "typeString": "struct FrenList.Fren"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 116,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 113,
+                      "name": "frens",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "971:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                        "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                      }
+                    },
+                    "id": 115,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 114,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 108,
+                      "src": "977:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "971:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "951:30:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 123,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 117,
+                        "name": "_fren",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "987:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                          "typeString": "struct FrenList.Fren memory"
+                        }
+                      },
+                      "id": 119,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "cancel",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12,
+                      "src": "987:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 122,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "1002:13:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 120,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 112,
+                          "src": "1003:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 121,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1003:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "987:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 124,
+                  "nodeType": "ExpressionStatement",
+                  "src": "987:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 129,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 125,
+                        "name": "frens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "1021:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Fren_$13_storage_$",
+                          "typeString": "mapping(uint256 => struct FrenList.Fren storage ref)"
+                        }
+                      },
+                      "id": 127,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1027:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1021:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_storage",
+                        "typeString": "struct FrenList.Fren storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 128,
+                      "name": "_fren",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 112,
+                      "src": "1034:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                        "typeString": "struct FrenList.Fren memory"
+                      }
+                    },
+                    "src": "1021:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fren_$13_storage",
+                      "typeString": "struct FrenList.Fren storage ref"
+                    }
+                  },
+                  "id": 130,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1021:18:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 132,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 108,
+                        "src": "1061:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 133,
+                          "name": "_fren",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 112,
+                          "src": "1066:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Fren_$13_memory_ptr",
+                            "typeString": "struct FrenList.Fren memory"
+                          }
+                        },
+                        "id": 134,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancel",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1066:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 131,
+                      "name": "FrenCancel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 39,
+                      "src": "1050:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 136,
+                  "nodeType": "EmitStatement",
+                  "src": "1045:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 138,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleCancel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 108,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 138,
+                  "src": "928:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 107,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "928:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "927:10:0"
+            },
+            "returnParameters": {
+              "id": 110,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "945:0:0"
+            },
+            "scope": 139,
+            "src": "906:178:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 140,
+        "src": "57:1030:0"
+      }
+    ],
+    "src": "32:1056:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xc003d93c0e4c095a9c35223c104ecae301522bf5e18bbc8e9345999b7dd167dc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "notify",
+              "type": "bool"
+            }
+          ],
+          "name": "FrenCreated",
+          "type": "event"
+        },
+        "0xfd38e78516e1de249df28ca27b043f23009a27b35b12ac3df38ca69931deb5d4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "notify",
+              "type": "bool"
+            }
+          ],
+          "name": "FrenNotify",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x630e26406dB7F5fe22b72c29007AC316dA447560",
+      "transactionHash": "0x981d0141447f9a6d28d41dc3f718f2d50f0e375f85f470e06f8736c3b10075be"
+    }
+  },
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-12-12T00:48:30.627Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
